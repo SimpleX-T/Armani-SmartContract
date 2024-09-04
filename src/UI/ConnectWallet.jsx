@@ -6,8 +6,6 @@
 // }
 
 import Web3 from "web3";
-import WalletConnect from "@walletconnect/client";
-import Web3Provider from "@walletconnect/web3-provider";
 import { useApp } from "../Hooks/AppProvider";
 
 function ConnectWallet() {
@@ -30,30 +28,7 @@ function ConnectWallet() {
 
 				setWalletAddress(connectedAccount);
 			} else {
-				const walletConnector = new WalletConnect({
-					bridge: "https://bridge.walletconnect.org",
-					qrcode: true,
-				});
-
-				if (!walletConnector.connected) {
-					await walletConnector.createSession();
-				}
-
-				const uri = walletConnector.uri;
-				console.log(uri);
-
-				walletConnector.on("connect", (error, payload) => {
-					if (error) {
-						throw error;
-					}
-
-					const { accounts } = payload.params[0];
-					setWalletAddress(accounts[0]);
-					console.log("Connected account:", accounts[0]);
-				});
-
-				const provider = new Web3Provider(walletConnector);
-				const web3 = new Web3(provider);
+				alert("Please install metamask");
 			}
 		} catch (err) {
 			console.error("Error connecting wallet: ", err);
