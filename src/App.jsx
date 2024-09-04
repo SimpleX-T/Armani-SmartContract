@@ -8,51 +8,51 @@ import { AppProvider } from "./Hooks/AppProvider";
 import CreateRequest from "./Features/CreateRequest";
 import About from "./Pages/About";
 
-import { createWeb3Modal } from "@web3modal/wagmi/react";
-import { defaultWagmiConfig } from "@web3modal/wagmi/react/config";
+// import { createWeb3Modal } from "@web3modal/wagmi/react";
+// import { defaultWagmiConfig } from "@web3modal/wagmi/react/config";
 
-import { WagmiProvider } from "wagmi";
-import { mainnet, liskSepolia, lisk } from "wagmi/chains";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+// import { WagmiProvider } from "wagmi";
+// import { mainnet, liskSepolia, lisk } from "wagmi/chains";
+// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-const queryClient = new QueryClient();
+// const queryClient = new QueryClient();
 
-const projectId = "78b06c98c700a62618463ac42eb9528b";
+// const projectId = "78b06c98c700a62618463ac42eb9528b";
 
-const metadata = {
-	name: "Amani Finance",
-	description: "AppKit Example",
-	url: "https://web3modal.com", // origin must match your domain & subdomain
-	icons: ["https://avatars.githubusercontent.com/u/37784886"],
-};
+// const metadata = {
+// 	name: "Amani Finance",
+// 	description: "AppKit Example",
+// 	url: "https://web3modal.com", // origin must match your domain & subdomain
+// 	icons: ["https://avatars.githubusercontent.com/u/37784886"],
+// };
 
-const chains = [mainnet, lisk, liskSepolia];
-const config = defaultWagmiConfig({
-	chains,
-	projectId,
-	metadata,
-});
+// const chains = [mainnet, lisk, liskSepolia];
+// const config = defaultWagmiConfig({
+// 	chains,
+// 	projectId,
+// 	metadata,
+// });
 
-createWeb3Modal({
-	wagmiConfig: config,
-	projectId,
-	enableAnalytics: true,
-	enableOnramp: true,
-});
+// createWeb3Modal({
+// 	wagmiConfig: config,
+// 	projectId,
+// 	enableAnalytics: true,
+// 	enableOnramp: true,
+// });
 
-export function Web3ModalProvider({ children }) {
-	return (
-		<WagmiProvider config={config}>
-			<QueryClientProvider client={queryClient}>
-				{children}
-			</QueryClientProvider>
-		</WagmiProvider>
-	);
-}
+// export function Web3ModalProvider({ children }) {
+// 	return (
+// 		<WagmiProvider config={config}>
+// 			<QueryClientProvider client={queryClient}>
+// 				{children}
+// 			</QueryClientProvider>
+// 		</WagmiProvider>
+// 	);
+// }
 
 function App() {
 	return (
-		<Web3ModalProvider>
+		// <Web3ModalProvider>
 			<BrowserRouter>
 				<AppProvider>
 					<Routes>
@@ -85,7 +85,7 @@ function App() {
 					</Routes>
 				</AppProvider>
 			</BrowserRouter>
-		</Web3ModalProvider>
+		// </Web3ModalProvider>
 	);
 }
 export default App;
