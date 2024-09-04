@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	font-family: "Manrope", sans-serif;
+}
+
+.app {
+	background: radial-gradient(
+		circle at top left,
+		#000000,
+		#335dff,
+		#000000 40%
+	);
+}
+
+nav:not([role="navigation"]) a.active,
+nav:not([role="navigation"]) a:hover {
+	color: white;
+}
