@@ -1,16 +1,10 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { useAccount } from "wagmi";
 
 const AppContext = createContext();
 
 function AppProvider({ children }) {
-	const { address } = useAccount();
 	const [walletAddress, setWalletAddress] = useState("");
 	const [navIsOpen, setNavIsOpen] = useState(false);
-
-	useEffect(function () {
-		setWalletAddress(address);
-	}, []);
 
 	return (
 		<AppContext.Provider
